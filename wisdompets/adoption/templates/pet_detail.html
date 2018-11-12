@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="pet-detail">
+    {% if not pet %}
+        <p>No pet detail found!</p>
+    {% endif %}
+
+    <div class="name">
+        {{pet.name}}
+    </div>
+    {% if pet.breed %}
+        <div>Breed: {{pet.breed}}</div>
+    {% endif %}
+    <div>Species: {{pet.species}}</div>
+    <div>Age: {{pet.age}}</div>
+    <div>Sex: {{pet.sex}}</div>
+    <ul>
+        {% for vaccine in pet.vaccinations.all %}
+            <li>{{ vaccine.name }}</li>
+        {% endfor %}
+    </ul>
+    <div>Description: {{pet.description}}</div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="pets">
+    {% if not pets %}
+        <p class="message">No Pets found!</p>
+    {% endif %}
+    {% for pet in pets %}
+        <div class="pet">
+            <div class="name">
+                <a href="{% url 'pet_detail' pet.id %}">
+                    <h3>{{ pet.name }}</h3>
+                </a>
+            </div>
+            {% if pet.breed %}
+                <div> Breed: {{ pet.breed }} </div>
+            {% endif %}
+            <div class="hidden">Descrption: {{ pet.description }} </div>
+        </div>
+        <hr/>
+    {% endfor %}
+</div>
+{% endblock %}
