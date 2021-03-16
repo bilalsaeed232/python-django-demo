@@ -1,2 +1,2 @@
-# djangodemo
-This a django project, for the purpose of learning django
+# WisdomPets
+A fictional pet company, build with Django
